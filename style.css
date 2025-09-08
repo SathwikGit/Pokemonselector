@@ -9,7 +9,7 @@ body {
 body {
   display: flex;
   justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  align-items: flex-start;
   /* height: 100vh; */
 }
 
@@ -17,13 +17,13 @@ body {
   background-color: lightblue;
   display: flex;
   flex-direction: column;
-  width: 80%;
-  height: 80%;
-  margin: 0; /* Remove margin */
+  width: 95vw; /* Use viewport width for flexibility */
+  max-width: 1200px; /* Don't let it go too wide on large screens */
+
+  height: auto; /* Let it grow with its content */
+  margin: 40px auto; /* Center horizontally and give some margin */
   padding: 20px;
-  padding-left: 0px;
   box-sizing: border-box;
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -34,8 +34,33 @@ body {
 .display {
   background-color: antiquewhite;
   margin: 0;
-  height: 80%;
-  width: 80%;
-  padding: 5px;
+  min-height: 200px; /* Grow as needed */
+  width: 100%; /* Always fill container */
+  padding: 10px;
   margin-top: 10px;
+  box-sizing: border-box;
+
+  max-height: 500px; /* Show 2 card rows (adjust as needed) */
+  overflow-y: auto; /* Adds vertical scroll if needed  */
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap; /* Allows cards to wrap to the next line */
+  justify-content: center; /* Center the cards horizontally */
+  align-items: stretch; /* Stretch cards to equal height if possible */
+  gap: 20px; /* Add space between cards */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: azure; /* Light background */
+  padding: 20px; /* Inner spacing */
+  margin: 15px; /* Space outside the card */
+  border: 1px solid black; /* Solid border with width and color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  /* max-width: 100%; Make sure it fits inside parent */
+  box-sizing: border-box; /* Include padding and border in size */
 }
